@@ -11,8 +11,6 @@ syn keyword function replicate scatter drop
 
 syn keyword boolean true false
 
-syn match FutIdentifier "[a-zA-Z_][a-zA-Z0-9_]*" skipwhite contained
-
 syn keyword type i8 i16 i32 i64 u8 u16 u32 u64 int real bool char f32 f64
 
 syn keyword typedef type
@@ -21,23 +19,9 @@ syn keyword constant "[1-9][0-9]+" "[0-9]\.[0-9]+"
 
 syn match operator "[\+\-\*/><%\!=&\|\^:]"
 
-syn match number "(?<![\w\.])"
-syn match number "[+-]?0x[0-9a-fA-F]+"
-syn match number "([ui](8|16|32|64))?"
-syn match number "(?![\w\.])"
-syn match number "(?<![\w\.])"
-syn match number "[+-]?[0-9]+"
-syn match number "([ui](8|16|32|64))?"
-syn match number "(?![\w\.])"
-
-syn match float "(?<![\w\.])"
-syn match float "(([0-9]+(\.[0-9]+)?))"
-syn match float "([eE][\+\-]?[0-9]+)?"
-syn match float "(f(32|64))?"
-syn match float "(?![\w\.])"
+syn match float "\d\+"
+syn match normal "[a-zA-Z]\+\d\+"
 
 syn region string start=*"* end=*"*
 
 syn match comment "--.*$"
-
-hi def link FutIdentifier Function
